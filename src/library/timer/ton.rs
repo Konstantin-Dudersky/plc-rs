@@ -1,19 +1,21 @@
+use serde::Serialize;
+
 use crate::function_block::{FunctionBlockBase, IFunctionBlock};
 use crate::{library::edge_detect::rising_edge, types};
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarInput {
     pub input: bool,
     pub preset_time: types::TimeDuration,
 }
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarOutput {
     pub output: bool,
     pub elapsed_time: types::TimeDuration,
 }
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarStatic {
     input_rising_edge: rising_edge::FunctionBlock,
     delay: types::TimeInstant,

@@ -1,9 +1,11 @@
-#[derive(Clone, Default)]
+use serde::Serialize;
+
+#[derive(Clone, Default, Serialize)]
 pub struct FunctionBlockBase<TInput, TOutput, TStatic>
 where
-    TInput: Clone + Default,
-    TOutput: Clone + Default,
-    TStatic: Clone + Default,
+    TInput: Clone + Default + Serialize,
+    TOutput: Clone + Default + Serialize,
+    TStatic: Clone + Default + Serialize,
 {
     pub input: TInput,
     pub output: TOutput,
@@ -12,9 +14,9 @@ where
 
 impl<TInput, TOutput, TStatic> FunctionBlockBase<TInput, TOutput, TStatic>
 where
-    TInput: Clone + Default,
-    TOutput: Clone + Default,
-    TStatic: Clone + Default,
+    TInput: Clone + Default + Serialize,
+    TOutput: Clone + Default + Serialize,
+    TStatic: Clone + Default + Serialize,
     Self: IFunctionBlock<TInput, TOutput, TStatic>,
 {
     pub fn call(&mut self, input: TInput) -> TOutput {

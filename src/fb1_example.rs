@@ -1,20 +1,22 @@
+use serde::Serialize;
+
 use crate::{
     function_block::{FunctionBlockBase, IFunctionBlock},
     library::timer::ton,
     types,
 };
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarInput {
     pub counter: u32,
 }
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarOutput {
     pub out_counter: u32,
 }
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarStatic {
     timer: ton::FunctionBlock,
 }

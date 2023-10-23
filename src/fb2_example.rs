@@ -1,18 +1,20 @@
+use serde::Serialize;
+
 use crate::function_block::{FunctionBlockBase, IFunctionBlock};
 
 use super::fb1_example;
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarInput {
     pub counter: u32,
 }
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarOutput {
     pub out_counter: u32,
 }
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Serialize)]
 pub struct VarStatic {
     pub internal_counter: u32,
     pub fb1_inst: fb1_example::FunctionBlock,

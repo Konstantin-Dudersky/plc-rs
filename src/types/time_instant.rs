@@ -5,6 +5,8 @@
 
 use std::time::Instant;
 
+use serde::Serialize;
+
 use crate::types;
 
 #[derive(Clone)]
@@ -33,5 +35,14 @@ impl Default for TimeInstant {
         Self {
             inst: Instant::now(),
         }
+    }
+}
+
+impl Serialize for TimeInstant {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        serializer.serialize_u128(self.inst.elapsed().as_millis())
     }
 }

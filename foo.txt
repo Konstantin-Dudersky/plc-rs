@@ -1,0 +1,1 @@
+{"fb1_inst":{"input":{"counter":0},"output":{"out_counter":0},"stat":{"timer":{"input":{"input":false,"preset_time":{"secs":0,"nanos":0}},"output":{"output":false,"elapsed_time":{"secs":0,"nanos":0}},"stat":{"input_rising_edge":{"input":{"i":false},"output":{"q":false},"stat":{"prev_i":false}},"delay":8002}}}}}

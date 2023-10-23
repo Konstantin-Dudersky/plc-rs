@@ -1,17 +1,19 @@
+use serde::{Deserialize, Serialize};
+
 pub use crate::function_block::FunctionBlockBase;
 use crate::function_block::IFunctionBlock;
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Deserialize, Serialize)]
 pub struct VarInput {
     pub i: bool,
 }
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Deserialize, Serialize)]
 pub struct VarOutput {
     pub q: bool,
 }
 
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Deserialize, Serialize)]
 pub struct VarStatic {
     prev_i: bool,
 }
