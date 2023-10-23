@@ -1,5 +1,4 @@
-pub use crate::function_block::FunctionBlockBase;
-use crate::function_block::IFunctionBlock;
+use crate::function_block::{FunctionBlockBase, IFunctionBlock};
 
 use super::fb1_example;
 
@@ -16,7 +15,7 @@ pub struct VarOutput {
 #[derive(Clone, Default)]
 pub struct VarStatic {
     pub internal_counter: u32,
-    pub fb1_inst: fb1_example::Fb1Example,
+    pub fb1_inst: fb1_example::FunctionBlock,
 }
 
 impl IFunctionBlock<VarInput, VarOutput, VarStatic>
@@ -35,3 +34,5 @@ impl IFunctionBlock<VarInput, VarOutput, VarStatic>
         }
     }
 }
+
+pub type FunctionBlock = FunctionBlockBase<VarInput, VarOutput, VarStatic>;

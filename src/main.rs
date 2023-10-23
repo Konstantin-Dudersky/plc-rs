@@ -2,11 +2,12 @@ mod fb1_example;
 mod fb2_example;
 mod function_block;
 mod library;
+mod main_cycle;
 mod template;
 mod types;
 
 fn main() {
-    let mut fb1 = fb1_example::FunctionBlockBase::default();
+    let mut fb1 = fb1_example::FunctionBlock::default();
 
     let mut counter = 0;
 

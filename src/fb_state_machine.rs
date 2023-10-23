@@ -1,5 +1,3 @@
-//! Шаблон для нового функционального блока
-
 use crate::function_block::{FunctionBlockBase, IFunctionBlock};
 
 #[derive(Clone, Default)]
@@ -19,5 +17,4 @@ impl IFunctionBlock<VarInput, VarOutput, VarStatic>
     }
 }
 
-#[allow(dead_code)]
 pub type FunctionBlock = FunctionBlockBase<VarInput, VarOutput, VarStatic>;

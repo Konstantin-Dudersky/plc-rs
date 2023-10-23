@@ -1,6 +1,8 @@
-pub use crate::function_block::FunctionBlockBase;
-use crate::function_block::IFunctionBlock;
-use crate::{library::timer::ton, types};
+use crate::{
+    function_block::{FunctionBlockBase, IFunctionBlock},
+    library::timer::ton,
+    types,
+};
 
 #[derive(Clone, Default)]
 pub struct VarInput {
@@ -37,4 +39,4 @@ impl IFunctionBlock<VarInput, VarOutput, VarStatic>
     }
 }
 
-pub type Fb1Example = FunctionBlockBase<VarInput, VarOutput, VarStatic>;
+pub type FunctionBlock = FunctionBlockBase<VarInput, VarOutput, VarStatic>;

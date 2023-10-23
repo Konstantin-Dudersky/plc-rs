@@ -1,5 +1,4 @@
-pub use crate::function_block::FunctionBlockBase;
-use crate::function_block::IFunctionBlock;
+use crate::function_block::{FunctionBlockBase, IFunctionBlock};
 use crate::{library::edge_detect::rising_edge, types};
 
 #[derive(Clone, Default)]
@@ -36,7 +35,7 @@ impl IFunctionBlock<VarInput, VarOutput, VarStatic>
         }
 
         VarOutput {
-            output: self.stat.delay.elapsed() > self.input.preset_time,
+            output: self.stat.delay.elapsed() >= self.input.preset_time,
             elapsed_time: self.stat.delay.elapsed(),
         }
     }
